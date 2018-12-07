@@ -10,7 +10,6 @@ TEST(createNewCredentials, validPassword)
 		"user1234", "isThisPasswordLongEnough", credentialsBlob);
 
 	EXPECT_EQ(true, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(createNewCredentials, shortPassword)
@@ -20,7 +19,6 @@ TEST(createNewCredentials, shortPassword)
 	bool status = user.createNewCredentials("user1234", "tooShortPw", credentialsBlob);
 
 	EXPECT_EQ(false, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(createNewCredentials, lowercaseTest)
@@ -31,7 +29,6 @@ TEST(createNewCredentials, lowercaseTest)
 		"user1234", "password missing upper case", credentialsBlob);
 
 	EXPECT_EQ(false, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(createNewCredentials, uppercaseTest)
@@ -42,7 +39,6 @@ TEST(createNewCredentials, uppercaseTest)
 		"user1234", "password missing upper case", credentialsBlob);
 
 	EXPECT_EQ(false, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(verifyCredentials, validPasswordAndUsername)
@@ -61,7 +57,6 @@ TEST(verifyCredentials, validPasswordAndUsername)
 	}
 
 	EXPECT_EQ(true, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(verifyCredentials, invalidPassword)
@@ -80,7 +75,6 @@ TEST(verifyCredentials, invalidPassword)
 	}
 
 	EXPECT_EQ(false, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(verifyCredentials, invalidUserName)
@@ -99,7 +93,6 @@ TEST(verifyCredentials, invalidUserName)
 	}
 
 	EXPECT_EQ(false, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(encryptFile, nonEmptyFileData)
@@ -115,7 +108,6 @@ TEST(encryptFile, nonEmptyFileData)
 		fileDataToEncrypt.size(), encryptedBlob);
 
 	EXPECT_EQ(true, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(encryptFile, emptyFileData)
@@ -131,7 +123,6 @@ TEST(encryptFile, emptyFileData)
 		fileDataToEncrypt.size(), encryptedBlob);
 
 	EXPECT_EQ(false, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(decryptFile, validEncryptedBlob)
@@ -157,7 +148,6 @@ TEST(decryptFile, validEncryptedBlob)
 	}
 
 	EXPECT_EQ(true, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(decryptFile, corruptEncryptedBlob)
@@ -179,7 +169,6 @@ TEST(decryptFile, corruptEncryptedBlob)
 	bool status = user.decryptFileData(encryptedBlob.data(), encryptedBlob.size(), cryptoFile);
 
 	EXPECT_EQ(false, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(decryptFile, corruptKeyInEncryptedBlob)
@@ -201,7 +190,6 @@ TEST(decryptFile, corruptKeyInEncryptedBlob)
 	bool status = user.decryptFileData(encryptedBlob.data(), encryptedBlob.size(), cryptoFile);
 
 	EXPECT_EQ(false, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(decryptFile, tooSmallEncryptedBlob)
@@ -223,7 +211,6 @@ TEST(decryptFile, tooSmallEncryptedBlob)
 	bool status = user.decryptFileData(encryptedBlob.data(), encryptedBlob.size(), cryptoFile);
 
 	EXPECT_EQ(false, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(decryptFile, emptyEncryptedBlob)
@@ -238,7 +225,6 @@ TEST(decryptFile, emptyEncryptedBlob)
 	bool status = user.decryptFileData(encryptedBlob.data(), encryptedBlob.size(), cryptoFile);
 
 	EXPECT_EQ(false, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(decryptFile, invalidUser)
@@ -266,7 +252,6 @@ TEST(decryptFile, invalidUser)
 	}
 
 	EXPECT_EQ(false, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(decryptFile, emptyCryptoFileParameters)
@@ -284,7 +269,6 @@ TEST(decryptFile, emptyCryptoFileParameters)
 		fileDataToEncrypt.size(), encryptedBlob);
 
 	EXPECT_EQ(false, status);
-	EXPECT_TRUE(true);
 }
 
 TEST(decryptFile, invalidCryptoFileParameters)
@@ -304,5 +288,4 @@ TEST(decryptFile, invalidCryptoFileParameters)
 		fileDataToEncrypt.size(), encryptedBlob);
 
 	EXPECT_EQ(false, status);
-	EXPECT_TRUE(true);
 }
